@@ -1,0 +1,91 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# file manager
+super + shift + Return
+    pcmanfm
+
+# browser
+super + w
+    brave
+
+# program launcher
+super + @space
+	dmenu_run
+
+super + x
+    lxsession-logout
+
+super + bar
+    qalculate-gtk
+
+# Multimedia Keys
+XF86AudioMute
+    amixer set Master toggle
+
+XF86Audio{Lower,Raise}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+XF86MonBrightness{Down,Up}
+    light -{U,A} 5
+
+Print
+    xfce4-screenshooter
+
+#
+# bspwm hotkeys
+#
+
+# scratchpad terminal
+super + F12
+	$HOME/.config/bspwm/scripts/scratchpad_terminal.sh
+
+# quit/restart bspwm
+super + shift + {q,r}
+    bspc {quit,wm -r}
+
+# close a window
+super + q
+    bspc node -c
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }Tab
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+# swap the current node and the biggest window
+super + ctrl + Return
+	bspc node -s biggest.local
+
+# expand a window by moving one of its side outward
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# toggle gaps
+super + period
+    $HOME/.config/bspwm/scripts/toggle_gaps.sh
+
+# preselect the direction
+super + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
