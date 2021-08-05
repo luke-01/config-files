@@ -92,7 +92,8 @@ let g:completion_enable_auto_signature = 0
 
 lua << EOF
 require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
--- require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.pylsp.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 -- require'lspconfig'.cmake.setup{on_attach=require'completion'.on_attach}
 -- require'lspconfig'.rls.setup{on_attach=require'completion'.on_attach}
 -- require'lspconfig'.texlab.setup{

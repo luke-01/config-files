@@ -28,4 +28,5 @@ disabled = true
 
 [rust]
 disabled = true
+
 # vim:ft=dosini

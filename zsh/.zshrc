@@ -23,7 +23,7 @@ alias yay='yay --sudoloop'
 # variables
 export EDITOR=/usr/bin/nvim
 export MANPAGER="nvim -c 'set ft:man' -"
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$(yarn global bin):$HOME/.local/bin:$PATH
 
 neofetch
 

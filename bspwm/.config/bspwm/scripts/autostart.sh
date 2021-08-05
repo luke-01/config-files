@@ -3,6 +3,9 @@
 # keymap
 setxkbmap latam -option 'ctrl:swapcaps'
 
+# cursor
+xsetroot -cursor_name left_ptr
+
 # compositor and wallpaper
 
 pgrep -x picom > /dev/null || picom &
@@ -25,5 +28,4 @@ sxhkd &
 pgrep -x nm-applet > /dev/null || nm-applet &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x lxsession > /dev/null || lxsession &
-pgrep -x udiskie > /dev/null || udiskie &
-pgrep -x spotifyd > /dev/null || spotifyd &
+pcmanfm -d &
