@@ -110,6 +110,10 @@ require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 require'nvim-treesitter.configs'.setup{highlight = {enable = true}}
 EOF
 
+nnoremap <leader>gk :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>gR :lua vim.lsp.buf.rename()<CR>
+
 "Vim rooter
 let g:rooter_patterns = ["Makefile", ".git", "CMakeLists.txt", "build.sh"]
 
