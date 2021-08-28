@@ -12,7 +12,7 @@ super + shift + Return
 
 # browser
 super + w
-    brave
+    chromium
 
 # program launcher
 super + @space

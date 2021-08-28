@@ -61,6 +61,7 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+nnoremap <leader>q <C-w>q
 
 "Plugins
 call plug#begin(stdpath('data') . '/plugged')
@@ -72,13 +73,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(1)}}
 
 "Visual Stuff
 Plug 'itchyny/lightline.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'joshdick/onedark.vim'
-Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
@@ -92,26 +90,14 @@ let g:completion_enable_auto_signature = 0
 
 lua << EOF
 require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
-require'lspconfig'.pylsp.setup{on_attach=require'completion'.on_attach}
 require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
--- require'lspconfig'.cmake.setup{on_attach=require'completion'.on_attach}
--- require'lspconfig'.rls.setup{on_attach=require'completion'.on_attach}
--- require'lspconfig'.texlab.setup{
---     on_attach=require'completion'.on_attach;
---     settings = {
---         latex = {
---             build = {
---                 onSave = true;
---             }
---         }
---     }
--- }
 
 require'nvim-treesitter.configs'.setup{highlight = {enable = true}}
 EOF
 
 nnoremap <leader>gk :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap <leader>gR :lua vim.lsp.buf.rename()<CR>
 
 "Vim rooter
@@ -166,6 +152,3 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 "GUI (neovide) settings
 let g:neovide_fullscreen=v:false
 set guifont=Fira\ Code:h12
-
-"Firenvim settings
-au BufEnter colab.research.google.com_* set filetype=python

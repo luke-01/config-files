@@ -18,12 +18,12 @@ alias la='exa -a'
 alias ll='exa -la'
 alias df='df -h'
 alias vi=nvim
-alias yay='yay --sudoloop'
+alias yay='yay --sudoloop --editmenu'
 
 # variables
 export EDITOR=/usr/bin/nvim
 export MANPAGER="nvim -c 'set ft:man' -"
-export PATH=$(yarn global bin --offline):$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 neofetch
 
