@@ -27,6 +27,7 @@ set shortmess+=c
 set signcolumn=yes
 set termguicolors
 set colorcolumn=100
+set cursorline
 set completeopt+=menuone,noinsert,noselect
 set mouse=nv
 set keywordprg=:vertical\ Man
@@ -62,6 +63,9 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>q <C-w>q
+
+vnoremap <C-c> "+y
+nnoremap Y y$
 
 "Plugins
 call plug#begin(stdpath('data') . '/plugged')
