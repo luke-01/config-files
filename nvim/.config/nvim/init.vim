@@ -31,6 +31,7 @@ set cursorline
 set completeopt+=menuone,noinsert,noselect
 set mouse=nv
 set keywordprg=:vertical\ Man
+set exrc
 
 let mapleader = " "
 
@@ -66,6 +67,7 @@ nnoremap <leader>q <C-w>q
 
 vnoremap <C-c> "+y
 nnoremap Y y$
+nnoremap <backspace> :bp<CR>
 
 "Plugins
 call plug#begin(stdpath('data') . '/plugged')
