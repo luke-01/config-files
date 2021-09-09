@@ -39,9 +39,8 @@ let mapleader = " "
 tnoremap <Esc> <C-\><C-n>
 
 function! OpenTerminal()
-    split
+    vertical split
     terminal
-    resize 7
 endfunction
 
 nnoremap <leader>t :call OpenTerminal()<CR>
@@ -157,4 +156,4 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 "GUI (neovide) settings
 let g:neovide_fullscreen=v:false
-set guifont=Fira\ Code:h12
+set guifont=Fira\ Code:h8
