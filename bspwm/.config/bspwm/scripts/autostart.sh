@@ -28,4 +28,6 @@ sxhkd &
 pgrep -x nm-applet > /dev/null || nm-applet &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x lxsession > /dev/null || lxsession &
-pcmanfm -d &
+pgrep -x pcmanfm > /dev/null || pcmanfm -d &
+
+

@@ -21,7 +21,6 @@ bspc rule -a Alacritty:Spotify desktop='^8'
 bspc rule -a discord desktop='^9'
 bspc rule -a Steam desktop='^10'
 bspc rule -a Zathura state=tiled
-bspc rule -a zoom desktop='^7' state=floating
 bspc rule -a Qalculate-gtk state=floating
 
 #for opengl testing
