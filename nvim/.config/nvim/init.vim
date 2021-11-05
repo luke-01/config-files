@@ -17,6 +17,7 @@ colorscheme onedark
 set number
 set relativenumber
 set cursorline
+set nowrap
 
 " Correct Tabbing
 set tabstop=4

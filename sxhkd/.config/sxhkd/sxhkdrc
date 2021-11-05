@@ -37,6 +37,9 @@ XF86MonBrightness{Down,Up}
 Print
     xfce4-screenshooter
 
+shift + Print
+    xfce4-screenshooter -f -s $HOME/Pictures/test.png
+
 #
 # bspwm hotkeys
 #
