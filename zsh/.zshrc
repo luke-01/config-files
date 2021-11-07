@@ -22,7 +22,7 @@ alias yay='yay --sudoloop --editmenu'
 
 # variables
 export EDITOR=/usr/bin/nvim
-export MANPAGER="nvim -c 'set ft:man' -"
+export MANPAGER="nvim +Man!"
 export PATH="$(go env GOPATH)/bin:$HOME/Odin:$HOME/.local/bin:$PATH"
 
 neofetch
