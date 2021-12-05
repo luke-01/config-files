@@ -1,0 +1,7 @@
+require('plugins')
+require('plugin-configs.nvim-tree')
+require('plugin-configs.nvim-cmp')
+require('plugin-configs.lsp')
+require('plugin-configs.treesitter')
+require('keybindings')
+require('settings')

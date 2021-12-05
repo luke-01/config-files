@@ -31,3 +31,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 eval "$(starship init zsh)"
+
+alias luamake=/home/luke/sumneko_lua/3rd/luamake/luamake
