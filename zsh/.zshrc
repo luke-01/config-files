@@ -19,6 +19,7 @@ alias ll='exa -la'
 alias df='df -h'
 alias vi=nvim
 alias yay='yay --sudoloop --editmenu'
+alias luamake=/home/luke/sumneko_lua/3rd/luamake/luamake #generado por sumneko
 
 # variables
 export EDITOR=/usr/bin/nvim
@@ -32,4 +33,3 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 eval "$(starship init zsh)"
 
-alias luamake=/home/luke/sumneko_lua/3rd/luamake/luamake

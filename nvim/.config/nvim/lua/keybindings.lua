@@ -16,6 +16,8 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, s
 
 -- terminal
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>vs<CR><cmd>terminal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>sp<CR><cmd>resize 8<CR><cmd>terminal<CR>', { noremap = true, silent = true })
 
 -- better shifting
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })

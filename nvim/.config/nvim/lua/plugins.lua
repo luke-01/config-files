@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
 
   -- colorscheme(s)
-  use 'navarasu/onedark.nvim'
+  use 'joshdick/onedark.vim'
 
   -- treesitter for better syntax highlighting
   use 'nvim-treesitter/nvim-treesitter'
