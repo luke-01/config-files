@@ -5,6 +5,7 @@ filetype plugin indent on
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'joshdick/onedark.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'neovim/nvim-lspconfig'
@@ -23,6 +24,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -36,13 +39,14 @@ set relativenumber
 set cursorline
 set linebreak " Break lines on a new word instead of whereever the cutoff was
 
-colorscheme onedark
+colorscheme kanagawa
 
 " Correct Tabbing
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+set breakindent
 
 " Undoing Properly
 set noswapfile
@@ -89,6 +93,9 @@ nnoremap <silent> <leader>t :call OpenTerminal()<CR>
 nnoremap <silent> <C-x> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <C-x> <C-\><C-n>:Lspsaga close_floaterm<CR>
 
+" Launch debugger
+nnoremap <silent> <leader>dd :call vimspector#Launch()<CR>
+
 " Navegating Splits
 nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
@@ -126,10 +133,16 @@ nnoremap <silent> <leader><leader> :set hlsearch!<CR>
 
 " ================================ Plugin Config ================================
 
+" Vimwiki
+let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
+
+" Vimspector
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
 lua << EOF
 
 -- nvim-tree
-require('nvim-tree').setup({})
+require('nvim-tree').setup({ view = { width = 20 } })
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({ highlight = { enable = true } })

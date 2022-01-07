@@ -28,6 +28,7 @@ export PATH="$(go env GOPATH)/bin:$HOME/Odin:$HOME/.local/bin:$PATH"
 
 neofetch
 
+source $HOME/dev/vulkan/1.2.198.1/setup-env.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
