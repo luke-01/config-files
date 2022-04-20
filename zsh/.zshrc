@@ -24,7 +24,8 @@ alias luamake=/home/luke/sumneko_lua/3rd/luamake/luamake #generado por sumneko
 # variables
 export EDITOR=/usr/bin/nvim
 export MANPAGER="nvim +Man!"
-export PATH="$(go env GOPATH)/bin:$HOME/Odin:$HOME/.local/bin:$PATH"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$GEM_HOME/bin:$(go env GOPATH)/bin:$HOME/Odin:$HOME/.local/bin:$PATH"
 
 neofetch
 
