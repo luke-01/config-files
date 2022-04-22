@@ -75,6 +75,10 @@ return packer.startup(function(use)
   }
 
   use 'akinsho/toggleterm.nvim' -- terminal
+  use {
+    'nvim-lualine/lualine.nvim', -- status line
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  }
 
   if PACKER_BOOTSTRAP then
     packer.sync()

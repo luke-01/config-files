@@ -5,6 +5,6 @@ end
 
 tree.setup({
   view = {
-    width = 23,
+    width = 30,
   }
 })
