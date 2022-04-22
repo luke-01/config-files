@@ -18,8 +18,8 @@ set_keymap('n', '<leader>e', '<cmd>Lexplore 25<CR>', noremap_silent)
 -- resize windows
 set_keymap('n', '<C-Up>', '<cmd>resize +2<CR>', noremap_silent)
 set_keymap('n', '<C-Down>', '<cmd>resize -2<CR>', noremap_silent)
-set_keymap('n', '<C-Left>', '<cmd>resize vertical -2<CR>', noremap_silent)
-set_keymap('n', '<C-Right>', '<cmd>resize vertical +2<CR>', noremap_silent)
+set_keymap('n', '<C-Left>', '<cmd>vertical resize -2<CR>', noremap_silent)
+set_keymap('n', '<C-Right>', '<cmd>vertical resize +2<CR>', noremap_silent)
 
 -- shifting stays in visual mode
 set_keymap('n', '>', '>gv', noremap)

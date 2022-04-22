@@ -30,6 +30,7 @@ packer.init({
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
   use 'rebelot/kanagawa.nvim' -- colorscheme
+  use 'navarasu/onedark.nvim' -- colorscheme
 
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
