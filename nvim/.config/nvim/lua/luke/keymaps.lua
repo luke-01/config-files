@@ -12,8 +12,12 @@ set_keymap('n', '<C-k>', '<C-w>k', noremap)
 set_keymap('n', '<C-j>', '<C-w>j', noremap)
 set_keymap('n', '<C-h>', '<C-w>h', noremap)
 
+-- navigating between buffers
+set_keymap('n', '<S-l>', '<cmd>:bnext<CR>', noremap_silent)
+set_keymap('n', '<S-h>', '<cmd>:bprevious<CR>', noremap_silent)
+
 -- file explorer
-set_keymap('n', '<leader>e', '<cmd>Lexplore 25<CR>', noremap_silent)
+set_keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', noremap_silent)
 
 -- resize windows
 set_keymap('n', '<C-Up>', '<cmd>resize +2<CR>', noremap_silent)
@@ -30,4 +34,4 @@ set_keymap('t', '<Esc>', [[<C-\><C-n>]], noremap)
 
 -- launch fuzzy finder
 set_keymap('n', '<leader>f', '<cmd>Telescope find_files<CR>', noremap_silent)
-set_keymap('n', '<C-t>', '<cmd>Telescope live_grep<CR>', noremap_silent)
+-- set_keymap('n', '<C-t>', '<cmd>Telescope live_grep<CR>', noremap_silent)

@@ -48,13 +48,33 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- convenience wrapper around the lsp api
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
-  use { 'nvim-telescope/telescope.nvim', -- fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim', -- fuzzy finder
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- make telescope use fzf natively
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- treesitter for syntax better syntax highlighting
+
+  use 'windwp/nvim-autopairs' -- automatically pair stuff like quotes and parenthesis
+
+  use 'numToStr/Comment.nvim' -- comment out lines and block of code
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- contextual comment styles
+
+  use {
+    'kyazdani42/nvim-tree.lua', -- file explorer
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
+
+  use {
+    'akinsho/bufferline.nvim', -- buffer line to replace tab line at the top
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
+
+  use 'akinsho/toggleterm.nvim' -- terminal
 
   if PACKER_BOOTSTRAP then
     packer.sync()

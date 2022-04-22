@@ -6,4 +6,11 @@ configs.setup({
     enable = true,
     additional_vim_regex_highlighting = true,
   },
+  autopairs = {
+    enable = true,
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  }
 })
