@@ -26,8 +26,8 @@ set_keymap('n', '<C-Left>', '<cmd>vertical resize -2<CR>', noremap_silent)
 set_keymap('n', '<C-Right>', '<cmd>vertical resize +2<CR>', noremap_silent)
 
 -- shifting stays in visual mode
-set_keymap('n', '>', '>gv', noremap)
-set_keymap('n', '<', '<gv', noremap)
+set_keymap('v', '>', '>gv', noremap)
+set_keymap('v', '<', '<gv', noremap)
 
 -- escape from terminal mode
 set_keymap('t', '<Esc>', [[<C-\><C-n>]], noremap)
