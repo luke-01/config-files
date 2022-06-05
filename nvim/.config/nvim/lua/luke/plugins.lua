@@ -80,6 +80,8 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
   }
 
+  use 'github/copilot.vim' --copilot
+
   if PACKER_BOOTSTRAP then
     packer.sync()
   end
