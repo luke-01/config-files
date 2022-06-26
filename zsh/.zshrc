@@ -18,6 +18,7 @@ alias la='exa -a'
 alias ll='exa -la'
 alias df='df -h'
 alias vi=nvim
+alias gvim='nvim-qt --no-ext-tabline'
 alias yay='yay --sudoloop --editmenu'
 alias luamake=/home/luke/sumneko_lua/3rd/luamake/luamake #generado por sumneko
 alias clion=/opt/clion-2022.1.1/bin/clion.sh

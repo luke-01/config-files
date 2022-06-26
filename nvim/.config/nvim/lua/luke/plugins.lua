@@ -30,7 +30,8 @@ packer.init({
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
   use 'rebelot/kanagawa.nvim' -- colorscheme
-  use 'navarasu/onedark.nvim' -- colorscheme
+  -- use 'navarasu/onedark.nvim' -- colorscheme
+  use 'joshdick/onedark.vim'
 
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -79,8 +80,6 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
   }
-
-  use 'github/copilot.vim' --copilot
 
   if PACKER_BOOTSTRAP then
     packer.sync()
