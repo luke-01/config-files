@@ -39,3 +39,7 @@ set_keymap('t', '<C-h>', [[<C-\><C-n><C-w>h]], noremap)
 -- launch fuzzy finder
 set_keymap('n', '<leader>f', '<cmd>Telescope find_files<CR>', noremap_silent)
 -- set_keymap('n', '<C-t>', '<cmd>Telescope live_grep<CR>', noremap_silent)
+
+-- guifont resize
+set_keymap('n', '<C-+>', '<cmd>lua require("luke.custom_funcs").resize_guifont(1)<CR>', noremap_silent)
+set_keymap('n', '<C-->', '<cmd>lua require("luke.custom_funcs").resize_guifont(-1)<CR>', noremap_silent)
