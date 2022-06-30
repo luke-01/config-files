@@ -30,6 +30,7 @@ vim.opt.breakindent = true -- wrapped lines will maintain indentation
 vim.opt.scrolloff = 8 -- scrolls the window if you go too up or to down inside it
 vim.opt.guifont = 'Fira Code:h17' -- font to use in graphical applications
 vim.opt.shortmess:append 'c' -- disables annoying messages in popup windows
+vim.opt.laststatus = 3 -- global statusline
 
 -- automatically close file explorer if it's the only open buffer on a tab
 vim.cmd([[

@@ -94,6 +94,7 @@ cmp.setup({
   formatting = {
     fields = { 'abbr', 'kind' },
     format = function(_, vim_item)
+      vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
       return vim_item
     end,
@@ -115,6 +116,6 @@ cmp.setup({
     }
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
   }
 })
