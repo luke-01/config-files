@@ -30,29 +30,27 @@ export PATH="$HOME/.rbenv/bin:$(go env GOPATH)/bin:$HOME/dev/4coder:$HOME/Odin:$
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 
 # rbenv init - without sourcing nonexistent files
-export PATH="/home/luke/.rbenv/shims:${PATH}"
-export RBENV_SHELL=zsh
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="${1:-}"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
+# export PATH="/home/luke/.rbenv/shims:${PATH}"
+# export RBENV_SHELL=zsh
+# command rbenv rehash 2>/dev/null
+# rbenv() {
+#   local command
+#   command="${1:-}"
+#   if [ "$#" -gt 0 ]; then
+#     shift
+#   fi
+# 
+#   case "$command" in
+#   rehash|shell)
+#     eval "$(rbenv "sh-$command" "$@")";;
+#   *)
+#     command rbenv "$command" "$@";;
+#   esac
+# }
 
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
-neofetch
-
-source $HOME/dev/vulkan/1.3.211.0/setup-env.sh
+# source $HOME/dev/vulkan/1.3.211.0/setup-env.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
