@@ -12,7 +12,7 @@ super + shift + Return
 
 # browser
 super + w
-    chromium
+    firefox
 
 # program launcher
 super + @space

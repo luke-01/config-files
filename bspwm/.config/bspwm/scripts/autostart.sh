@@ -8,7 +8,7 @@ xsetroot -cursor_name left_ptr
 
 # compositor and wallpaper
 
-pgrep -x picom > /dev/null || picom &
+pgrep -x picom > /dev/null || picom --experimental-backends --backend glx --blur-method gaussian &
 nitrogen --restore &
 
 # launch (or restart) polybar

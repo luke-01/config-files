@@ -74,7 +74,7 @@ cmp.setup({
       elseif check_backspace() then
         fallback()
       else
-        fallback()
+        vim.cmd('call copilot#Accept("<Tab>")')
       end
     end, {
       "i",
