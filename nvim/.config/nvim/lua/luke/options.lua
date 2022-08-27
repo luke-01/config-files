@@ -18,26 +18,16 @@ vim.opt.termguicolors = true -- some colorschemes require this
 vim.opt.undofile = true -- creates a file that keeps the history of changes done to the edited file
 vim.opt.updatetime = 300 -- faster completion
 vim.opt.writebackup = true -- makes a backup of the currently edited file. In case of an error, the file is restored to the backed up state
-vim.opt.expandtab = true -- tabs as spaces
+vim.opt.expandtab = false -- set to true for tabs as spaces
 vim.opt.shiftwidth = 4 -- amount of spaces to shift when using > and <
+vim.opt.softtabstop = 4 -- tab size
 vim.opt.tabstop = 4 -- tab size
 vim.opt.cursorline = true -- highlight the line under the cursor
 vim.opt.number = true -- line numbers
 vim.opt.relativenumber = true -- relative line numbers. In combination with number, the current line displays the current line number and all others are relative to the current line
 vim.opt.signcolumn = "yes" -- shows special characters (like error or warning signs) beside line numbers
-vim.opt.linebreak = true -- wrapped lines won't cut words in half
-vim.opt.breakindent = true -- wrapped lines will maintain indentation
+vim.opt.wrap = false -- don't wrap lines
 vim.opt.scrolloff = 8 -- scrolls the window if you go too up or to down inside it
-vim.opt.guifont = 'Fira Code:h17' -- font to use in graphical applications
+vim.opt.guifont = 'Fira Mono:h17' -- font to use in graphical applications
 vim.opt.shortmess:append 'c' -- disables annoying messages in popup windows
 vim.opt.laststatus = 3 -- global statusline
-
-vim.g.copilot_no_tab_map = true
-
--- automatically close file explorer if it's the only open buffer on a tab
-vim.cmd([[
-augroup close_file_group
-autocmd!
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-augroup END
-]])
