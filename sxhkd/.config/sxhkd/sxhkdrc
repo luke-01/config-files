@@ -32,7 +32,7 @@ XF86Audio{Lower,Raise}Volume
     pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 XF86MonBrightness{Down,Up}
-    light -{U,A} 5
+    xbacklight -{dec,inc} 5
 
 Print
     xfce4-screenshooter

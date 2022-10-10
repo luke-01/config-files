@@ -4,4 +4,4 @@ if not ok then
 	return
 end
 
-lualine.setup({ options = { theme = 'vscode' } })
+lualine.setup({ options = { theme = 'onedark' } })

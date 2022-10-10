@@ -37,7 +37,7 @@ height = 27
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -56,11 +56,11 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Fira Code Nerd Font
+font-2 = Iosevka Nerd Font
 
 modules-left = bspwm xwindow
 modules-center = kernel
-modules-right = xbacklight pulseaudio memory cpu battery temperature date
+modules-right = xbacklight pulseaudio battery date
 
 tray-position = right
 tray-padding = 2

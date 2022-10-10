@@ -18,7 +18,7 @@ local on_attach = function(_, bufnr)
 	nnoremap('gD', vim.lsp.buf.declaration, { buffer = bufnr })
 	nnoremap('gi', vim.lsp.buf.implementation, { buffer = bufnr })
 	nnoremap('K', vim.lsp.buf.hover, { buffer = bufnr })
-	nnoremap('<C-k>', vim.lsp.buf.signature_help, { buffer = bufnr })
+	nnoremap('<leader>k', vim.lsp.buf.signature_help, { buffer = bufnr })
 	nnoremap('<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
 	nnoremap('<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
 	nnoremap('<leader>gr', vim.lsp.buf.references, { buffer = bufnr })
@@ -34,6 +34,12 @@ else
 end
 
 lspconfig['clangd'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['rust_analyzer'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['pyright'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['gopls'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['tsserver'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['solargraph'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['emmet_ls'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['sumneko_lua'].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

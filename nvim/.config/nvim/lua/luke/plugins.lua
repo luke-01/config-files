@@ -24,7 +24,8 @@ return packer.startup({
 		use 'wbthomason/packer.nvim'
 
 		-- colorscheme
-		use 'Mofiqul/vscode.nvim'
+		-- use 'Mofiqul/vscode.nvim'
+		use 'joshdick/onedark.vim'
 
 		-- treesitter
 		use 'nvim-treesitter/nvim-treesitter'
@@ -56,6 +57,8 @@ return packer.startup({
 		use 'numToStr/Comment.nvim'
 		use 'JoosepAlviste/nvim-ts-context-commentstring'
 		use 'akinsho/toggleterm.nvim'
+		use 'lukas-reineke/indent-blankline.nvim'
+		use 'akinsho/bufferline.nvim'
 
 		-- status line
 		use 'nvim-lualine/lualine.nvim'

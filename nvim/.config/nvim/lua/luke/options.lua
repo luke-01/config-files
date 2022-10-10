@@ -1,3 +1,5 @@
+local tabsize = 2
+
 vim.opt.backup = false -- disables backup files, we'll use undofiles which are much more useful
 vim.opt.clipboard = 'unnamedplus' -- allows copying and pasting directly from system clipboard
 vim.opt.cmdheight = 2 -- more space in the command buffer for error messages
@@ -19,9 +21,9 @@ vim.opt.undofile = true -- creates a file that keeps the history of changes done
 vim.opt.updatetime = 300 -- faster completion
 vim.opt.writebackup = true -- makes a backup of the currently edited file. In case of an error, the file is restored to the backed up state
 vim.opt.expandtab = false -- set to true for tabs as spaces
-vim.opt.shiftwidth = 4 -- amount of spaces to shift when using > and <
-vim.opt.softtabstop = 4 -- tab size
-vim.opt.tabstop = 4 -- tab size
+vim.opt.shiftwidth = tabsize -- amount of spaces to shift when using > and <
+vim.opt.softtabstop = tabsize -- tab size
+vim.opt.tabstop = tabsize -- tab size
 vim.opt.cursorline = true -- highlight the line under the cursor
 vim.opt.number = true -- line numbers
 vim.opt.relativenumber = true -- relative line numbers. In combination with number, the current line displays the current line number and all others are relative to the current line

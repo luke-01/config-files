@@ -11,9 +11,6 @@ treesitter.setup({
 	highlight = {
 		enable = true
 	},
-	indent = {
-		enable = true
-	}
 })
 
 local ok, context = pcall(require, 'treesitter-context')

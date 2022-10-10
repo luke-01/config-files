@@ -12,7 +12,6 @@ pgrep -x picom > /dev/null || picom --experimental-backends --backend glx --blur
 nitrogen --restore &
 
 # launch (or restart) polybar
-
 killall -q polybar
 echo "---" | tee -a /tmp/polybar.log
 polybar example 2>&1 | tee -a /tmp/polybar.log & disown
@@ -30,4 +29,5 @@ pgrep -x dunst > /dev/null || dunst &
 pgrep -x lxsession > /dev/null || lxsession &
 pgrep -x pcmanfm > /dev/null || pcmanfm -d &
 
-
+pgrep -x discord > /dev/null | discord --start-minimized &
+pgrep -x steam > /dev/null | steam -silent &
