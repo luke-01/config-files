@@ -40,6 +40,7 @@ lspconfig['gopls'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['tsserver'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['solargraph'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['emmet_ls'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['tailwindcss'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['sumneko_lua'].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
