@@ -22,7 +22,7 @@ local on_attach = function(_, bufnr)
 	nnoremap('<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
 	nnoremap('<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
 	nnoremap('<leader>gr', vim.lsp.buf.references, { buffer = bufnr })
-	nnoremap('<leader>gf', vim.lsp.buf.formatting, { buffer = bufnr })
+	nnoremap('<leader>gf', function () vim.lsp.buf.format({ async = true }) end, { buffer = bufnr })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -30,10 +30,10 @@ local cmp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not cmp_ok then
 	print('cmp not available')
 else
-	capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
-lspconfig['clangd'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['astro'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['rust_analyzer'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['pyright'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['gopls'].setup({ on_attach = on_attach, capabilities = capabilities })
@@ -41,6 +41,11 @@ lspconfig['tsserver'].setup({ on_attach = on_attach, capabilities = capabilities
 lspconfig['solargraph'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['emmet_ls'].setup({ on_attach = on_attach, capabilities = capabilities })
 lspconfig['tailwindcss'].setup({ on_attach = on_attach, capabilities = capabilities })
+lspconfig['clangd'].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	-- cmd = { 'clangd', '--inlay-hints=true' },
+})
 lspconfig['sumneko_lua'].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

@@ -32,6 +32,9 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 # because rust is so good you need env variables to make it work properly
 export WINIT_UNIX_BACKEND=x11
 
+# sympy optimized backend
+set USE_SYMENGINE=1
+
 # xdg directories
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config

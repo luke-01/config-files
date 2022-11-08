@@ -54,7 +54,7 @@ snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
 			c = cmp.mapping.close(),
 		},
 		["<CR>"] = cmp.mapping.confirm { select = true },
-		['<Tab>'] = cmp.mapping(function(fallback)
+		['<C-Tab>'] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
 			else

@@ -63,6 +63,9 @@ return packer.startup({
 		-- status line
 		use 'nvim-lualine/lualine.nvim'
 
+		-- copilot
+		use 'github/copilot.vim'
+
 		if PACKER_BOOTSTRAP then
 			require('packer').sync()
 		end
