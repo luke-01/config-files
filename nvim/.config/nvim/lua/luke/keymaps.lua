@@ -1,5 +1,5 @@
-local nnoremap = require('luke.helpers').nnoremap
-local tnoremap = require('luke.helpers').tnoremap
+local nnoremap = require('luke.utils').nnoremap
+local tnoremap = require('luke.utils').tnoremap
 
 vim.g.mapleader = ' '
 
@@ -26,7 +26,35 @@ tnoremap('<C-j>', [[<C-\><C-n><C-w>j]])
 tnoremap('<C-k>', [[<C-\><C-n><C-w>k]])
 tnoremap('<C-l>', [[<C-\><C-n><C-w>l]])
 
+-- file manager
+local ok, nt_api = pcall(require, 'nvim-tree.api')
+if not ok then
+	nnoremap('<leader>e', '<cmd>Lexplore 30<CR>', { silent = true })
+else
+	nnoremap('<leader>e', nt_api.tree.toggle, { silent = true })
+end
+
+-- toggle highlight search
+nnoremap('<leader><leader>', '<cmd>set hlsearch!<CR>', { silent = true })
+
+-- diagnostics
+nnoremap('<leader>ge', vim.diagnostic.open_float)
+nnoremap('{d', vim.diagnostic.goto_prev)
+nnoremap('}d', vim.diagnostic.goto_next)
+
+-- lsp
+nnoremap('gd', vim.lsp.buf.definition)
+nnoremap('gD', vim.lsp.buf.declaration)
+nnoremap('gi', vim.lsp.buf.implementation)
+nnoremap('K', vim.lsp.buf.hover)
+nnoremap('<leader>k', vim.lsp.buf.signature_help)
+nnoremap('<leader>rn', vim.lsp.buf.rename)
+nnoremap('<leader>ca', vim.lsp.buf.code_action)
+nnoremap('<leader>gr', vim.lsp.buf.references)
+nnoremap('<leader>gf', function () vim.lsp.buf.format({ async = true }) end)
+
 -- resize guifont
 -- NOTE(luke): <C-+> doesn't work on windows for whatever reason (at least on neovide)
-nnoremap('<C-->', function() require('luke.helpers').resize_guifont(-1) end)
-nnoremap('<C-+>', function() require('luke.helpers').resize_guifont(1) end)
+local resize_guifont = require('luke.utils').resize_guifont
+nnoremap('<C-->', function() resize_guifont(-1) end)
+nnoremap('<C-+>', function() resize_guifont(1) end)

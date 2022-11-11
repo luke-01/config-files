@@ -1,35 +1,56 @@
-local tabsize = 2
+-- line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
 
-vim.opt.backup = false -- disables backup files, we'll use undofiles which are much more useful
-vim.opt.clipboard = 'unnamedplus' -- allows copying and pasting directly from system clipboard
-vim.opt.cmdheight = 2 -- more space in the command buffer for error messages
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' } -- only show 1 completion option, do not inmediately select an option when using completion
-vim.opt.conceallevel = 0 -- specifically so certain characters aren't hidden in markdown files
-vim.opt.hlsearch = true -- highlight all matches of the searched item
-vim.opt.ignorecase = true -- case insensitive search
-vim.opt.mouse = "a" -- enable use of mouse
-vim.opt.pumheight = 10 -- height of the popup menu
-vim.opt.showmode = false -- don't show what mode you're in (i.e: -- INSERT -- or -- VISUAL --)
-vim.opt.showtabline = 2 -- always show open tabs
-vim.opt.smartcase = true -- when combined with ignorecase, does case insensitive search if there you don't include capital letters, does case sensitive search if you do
-vim.opt.smartindent = true -- self explanatory
-vim.opt.splitbelow = true -- horizontal split opens new window below the current one
-vim.opt.splitright = true -- vertical split opens new window to the right of the current one
-vim.opt.swapfile = false -- nobody likes these
-vim.opt.termguicolors = true -- some colorschemes require this
-vim.opt.undofile = true -- creates a file that keeps the history of changes done to the edited file
-vim.opt.updatetime = 300 -- faster completion
-vim.opt.writebackup = true -- makes a backup of the currently edited file. In case of an error, the file is restored to the backed up state
+-- correct colors
+vim.opt.termguicolors = true
+
+-- split direction
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- yank/paste/delete use system clipboard
+vim.opt.clipboard = 'unnamedplus'
+
+-- tab size
+local tabsize = 2
 vim.opt.expandtab = false -- set to true for tabs as spaces
-vim.opt.shiftwidth = tabsize -- amount of spaces to shift when using > and <
-vim.opt.softtabstop = tabsize -- tab size
-vim.opt.tabstop = tabsize -- tab size
-vim.opt.cursorline = true -- highlight the line under the cursor
-vim.opt.number = true -- line numbers
-vim.opt.relativenumber = true -- relative line numbers. In combination with number, the current line displays the current line number and all others are relative to the current line
-vim.opt.signcolumn = "yes" -- shows special characters (like error or warning signs) beside line numbers
-vim.opt.wrap = false -- don't wrap lines
-vim.opt.scrolloff = 8 -- scrolls the window if you go too up or to down inside it
-vim.opt.guifont = 'Fira Mono:h17' -- font to use in graphical applications
-vim.opt.shortmess:append 'c' -- disables annoying messages in popup windows
-vim.opt.laststatus = 3 -- global statusline
+vim.opt.shiftwidth = tabsize
+vim.opt.softtabstop = tabsize
+vim.opt.tabstop = tabsize
+
+-- search in buffer
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- make backup of file before saving, delete backup if save was successful
+vim.opt.backup = false
+vim.opt.writebackup = true
+
+-- proper undoing
+vim.opt.swapfile = false
+vim.opt.undofile = true
+
+-- highlights
+vim.opt.cursorline = true
+vim.opt.colorcolumn = '100'
+
+-- don't wrap lines
+vim.opt.wrap = false
+
+-- global status line
+vim.opt.laststatus = 3
+
+-- gui font
+vim.opt.guifont = 'Fira Mono:h17'
+
+-- colorscheme
+local colorscheme = 'onedark'
+vim.cmd('colorscheme ' .. colorscheme)
+
+-- update diagnostics in insert mode
+vim.opt.updatetime = 300
+vim.opt.shortmess:append('c')
+vim.diagnostic.config({ update_in_insert = true })

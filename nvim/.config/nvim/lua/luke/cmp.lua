@@ -4,8 +4,8 @@ if not ok then
 	return
 end
 
-local luasnip_ok, luasnip = pcall(require, 'luasnip')
-if not luasnip_ok then
+local ok, luasnip = pcall(require, 'luasnip')
+if not ok then
 	print('LuaSnip not found')
 	return
 end

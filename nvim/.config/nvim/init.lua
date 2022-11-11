@@ -1,4 +1,11 @@
-require('luke.options')
-require('luke.keymaps')
-require('luke.plugins')
-require('luke.lsp')
+require 'luke.plugins'
+require 'luke.keymaps'
+require 'luke.options'
+require 'luke.lsp'
+require 'luke.treesitter'
+require 'luke.nvim-tree'
+require 'luke.cmp'
+require 'luke.dap'
+require 'luke.autopairs'
+require 'luke.comment'
+require 'luke.bufferline'
