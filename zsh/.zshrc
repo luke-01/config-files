@@ -41,13 +41,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.local/cache
 
-eval "$(rbenv init -)"
 
-source $HOME/dev/vulkansdk/1.3.224.1/setup-env.sh
-source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 eval "$(starship init zsh)"
+eval "$(fnm env --use-on-cd)"
 
 neofetch
