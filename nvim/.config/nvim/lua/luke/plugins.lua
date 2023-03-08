@@ -44,7 +44,6 @@ return packer.startup({
 		use 'hrsh7th/cmp-path'
 		use 'hrsh7th/cmp-nvim-lsp'
 		use 'hrsh7th/cmp-nvim-lua'
-		use 'rcarriga/cmp-dap'
 		use 'L3MON4D3/LuaSnip'
 		use 'saadparwaiz1/cmp_luasnip'
 
@@ -56,19 +55,13 @@ return packer.startup({
 		use 'RRethy/vim-illuminate'
 
 		-- telescope (fuzzy finder) plugins
-		use 'nvim-telescope/telescope.nvim'
+		use { 'nvim-telescope/telescope.nvim', requires = {{ 'nvim-lua/plenary.nvim' }} }
+		use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 		-- treesitter
-		use { 'nvim-treesitter/nvim-treesitter', run = require('nvim-treesitter.install').update() }
+		use 'nvim-treesitter/nvim-treesitter'
 		use 'nvim-treesitter/playground'
 		use 'nvim-treesitter/nvim-treesitter-context'
-
-		-- debugging
-		use 'mfussenegger/nvim-dap'
-		use 'rcarriga/nvim-dap-ui'
-
-		-- copilot
-		use 'github/copilot.vim'
 
 		if PACKER_BOOTSTRAP then
 			packer.sync()
