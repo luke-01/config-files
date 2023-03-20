@@ -63,6 +63,8 @@ return packer.startup({
 		use 'nvim-treesitter/playground'
 		use 'nvim-treesitter/nvim-treesitter-context'
 
+		use 'github/copilot.vim'
+
 		if PACKER_BOOTSTRAP then
 			packer.sync()
 		end

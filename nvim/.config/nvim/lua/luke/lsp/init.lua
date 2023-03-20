@@ -32,6 +32,7 @@ mason_lspconfig.setup_handlers({
 		if ok then
 			opts = vim.tbl_extend('force', opts, custom_opts)
 		end
+
 		lspconfig[server_name].setup(opts)
 	end
 })

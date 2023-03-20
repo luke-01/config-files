@@ -29,6 +29,7 @@ export MANPAGER="nvim +Man!"
 export PATH="$HOME/.cargo/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$(go env GOPATH)/bin:$HOME/dev/4coder:$HOME/Odin:$HOME/.local/bin:$PATH"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 
+
 # because rust is so good you need env variables to make it work properly
 export WINIT_UNIX_BACKEND=x11
 

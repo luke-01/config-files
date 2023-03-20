@@ -44,7 +44,7 @@ vim.opt.wrap = false
 vim.opt.laststatus = 3
 
 -- gui font
-vim.opt.guifont = 'Fira Mono:h17'
+vim.opt.guifont = 'Fira Code:h17'
 
 -- colorscheme
 local colorscheme = 'onedark'

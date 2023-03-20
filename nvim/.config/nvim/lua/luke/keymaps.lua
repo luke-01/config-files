@@ -26,13 +26,6 @@ tnoremap('<C-j>', [[<C-\><C-n><C-w>j]])
 tnoremap('<C-k>', [[<C-\><C-n><C-w>k]])
 tnoremap('<C-l>', [[<C-\><C-n><C-w>l]])
 
--- file manager
-local ok, nt_api = pcall(require, 'nvim-tree.api')
-if not ok then
-	nnoremap('<leader>e', '<cmd>Lexplore 30<CR>', { silent = true })
-else
-	nnoremap('<leader>e', nt_api.tree.toggle, { silent = true })
-end
 
 -- toggle highlight search
 nnoremap('<leader><leader>', '<cmd>set hlsearch!<CR>', { silent = true })
