@@ -54,3 +54,6 @@ vim.cmd('colorscheme ' .. colorscheme)
 vim.opt.updatetime = 300
 vim.opt.shortmess:append('c')
 vim.diagnostic.config({ update_in_insert = true })
+
+-- enable per project config
+vim.opt.exrc = true
