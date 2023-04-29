@@ -28,7 +28,7 @@ tnoremap('<C-l>', [[<C-\><C-n><C-w>l]])
 
 
 -- toggle highlight search
-nnoremap('<leader><leader>', '<cmd>set hlsearch!<CR>', { silent = true })
+nnoremap('<leader><leader>', '<cmd>nohl<CR>', { silent = true })
 
 -- diagnostics
 nnoremap('<leader>ge', vim.diagnostic.open_float)
@@ -45,9 +45,3 @@ nnoremap('<leader>rn', vim.lsp.buf.rename)
 nnoremap('<leader>ca', vim.lsp.buf.code_action)
 nnoremap('<leader>gr', vim.lsp.buf.references)
 nnoremap('<leader>gf', function () vim.lsp.buf.format({ async = true }) end)
-
--- resize guifont
--- NOTE(luke): <C-+> doesn't work on windows for whatever reason (at least on neovide)
-local resize_guifont = require('luke.utils').resize_guifont
-nnoremap('<C-->', function() resize_guifont(-1) end)
-nnoremap('<C-+>', function() resize_guifont(1) end)

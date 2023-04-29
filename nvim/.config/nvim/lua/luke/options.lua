@@ -1,59 +1,33 @@
--- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = 'yes'
 
--- correct colors
-vim.opt.termguicolors = true
-
--- split direction
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- yank/paste/delete use system clipboard
-vim.opt.clipboard = 'unnamedplus'
-
--- tab size
 local tabsize = 2
-vim.opt.expandtab = false -- set to true for tabs as spaces
-vim.opt.shiftwidth = tabsize
-vim.opt.softtabstop = tabsize
 vim.opt.tabstop = tabsize
+vim.opt.softtabstop = tabsize
+vim.opt.shiftwidth = tabsize
 
--- search in buffer
-vim.opt.hlsearch = true
+vim.opt.expandtab = false -- change this to true for tabs as spaces
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- make backup of file before saving, delete backup if save was successful
-vim.opt.backup = false
-vim.opt.writebackup = true
-
--- proper undoing
-vim.opt.swapfile = false
-vim.opt.undofile = true
-
--- highlights
 vim.opt.cursorline = true
-vim.opt.colorcolumn = '100'
 
--- don't wrap lines
-vim.opt.wrap = false
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.opt.signcolumn = 'yes'
 
--- global status line
-vim.opt.laststatus = 3
+vim.opt.clipboard = "unnamedplus"
 
--- gui font
-vim.opt.guifont = 'Fira Code:h17'
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
--- colorscheme
-local colorscheme = 'onedark'
-vim.cmd('colorscheme ' .. colorscheme)
+vim.opt.exrc = true
 
--- update diagnostics in insert mode
 vim.opt.updatetime = 300
 vim.opt.shortmess:append('c')
 vim.diagnostic.config({ update_in_insert = true })
-
--- enable per project config
-vim.opt.exrc = true
