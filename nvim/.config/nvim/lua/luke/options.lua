@@ -26,6 +26,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.swapfile = false
+vim.opt.undofile = true
+
 vim.opt.exrc = true
 
 vim.opt.updatetime = 300

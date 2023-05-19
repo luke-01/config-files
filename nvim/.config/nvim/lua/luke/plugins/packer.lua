@@ -32,6 +32,8 @@ return require('packer').startup({
 		use 'numToStr/Comment.nvim'
 		use 'windwp/nvim-autopairs'
 		use 'lukas-reineke/indent-blankline.nvim'
+		use 'akinsho/bufferline.nvim'
+		use 'nvim-lualine/lualine.nvim'
 
 		-- autocomplete
 		use 'hrsh7th/cmp-nvim-lsp'
@@ -45,6 +47,19 @@ return require('packer').startup({
 		-- file tree
 		use 'nvim-tree/nvim-web-devicons'
 		use 'nvim-tree/nvim-tree.lua'
+
+		-- telescope
+		use {
+			'nvim-telescope/telescope.nvim',
+			tag = '0.1.1',
+			requires = { {'nvim-lua/plenary.nvim'} }
+		}
+		use {
+			'nvim-telescope/telescope-fzf-native.nvim',
+			run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+		}
+
+		use 'github/copilot.vim'
 
 		if packer_bootstrap then
 			require('packer').sync()
